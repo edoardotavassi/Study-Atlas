@@ -1,0 +1,26 @@
+[package]
+name = "study-atlas"
+version = "1.0.0"
+description = "Study Atlas - Local-first study tracker"
+authors = ["Study Atlas"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.71"
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2", features = [] }
+tauri-plugin-sql = { version = "2", features = ["sqlite"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-store = "2"
+tauri-plugin-shell = "2"
